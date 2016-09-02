@@ -1,5 +1,6 @@
 function y = bisec(f,a,b,T,S)
 % y = bisect(f,a,b,D,E)
+%
 %This is a bisection algorithm by Alexander Winkles used to find roots of 
 % polynomials over a domain.
 %
