@@ -6,6 +6,8 @@ MATLAB:
 
 1. bisec.m              -   A MATLAB function that utilizes the bisection method to find the
                             zeroes in functions. 
+2. orbitaltrajectory.m  -   A MATLAB function (in development) that will model the orbits of
+                            satellites around Earth.
 
 Mathematica:
 
