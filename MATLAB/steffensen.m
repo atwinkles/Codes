@@ -1,5 +1,5 @@
 function steffensen(f,x0,T,S,q)
-%steffensen(f,x0,T,S)
+%steffensen(f,x0,T,S,q)
 %
 %This is a Steffensen's method algorithm designed by Alexander Winkles to
 % find roots of functions.
@@ -17,17 +17,16 @@ format long
 if q == 1
     fprintf('\nStep \t\t Result\n---\t\t --------\n');
 end;
-if feval(f,x0) == 0 || abs(feval(f,x0)) < T
+if abs(feval(f,x0)) < T
     fprintf('\n Your inital guess %d was close enough to zero!',x0);
 else
     i = 0;
     while i<= S
-        xi = x0 + feval(f,x0);
-        x1 = x0 - feval(f,x0)/((feval(f,xi)-feval(f,x0))/feval(f,x0));
+        x1 = x0 - feval(f,x0)/((feval(f,x0 + feval(f,x0))-feval(f,x0))/feval(f,x0));
         if q == 1
             fprintf('%d \t\t %f\n',i,x1)
         end;
-        if feval(f,x1) == 0 || abs(feval(f,x1)) < T
+        if abs(feval(f,x1)) < T
             fprintf('\nThe solution is %f. The computation was successful after %d iterations!\n\n',x1,i)
             break;
         end;
